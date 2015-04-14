@@ -1,11 +1,1 @@
-{
-  "public" : {
-    "ga": {
-      "account":"GA ID"
-    }
-  },
-  "apm":{
-  	"id":"APM ID",
-  	"secret":"APM Secret"
-  }
-}
+{}
