@@ -20,7 +20,7 @@ RssFeed.publish('jobs', function(query) {
 
   self.setValue('title', self.cdata('SuperNET - Recent Jobs'));
   self.setValue('description', self.cdata('This is a feed of recent jobs posted to We Work SuperNET.'));
-  self.setValue('link', Meteor.absoluteUrl());
+  self.setValue('link', 'http://jobs.supernet.org');
   self.setValue('lastBuildDate', lastBuildDate);
   self.setValue('pubDate', pubDate);
   self.setValue('ttl', 1);
@@ -35,8 +35,8 @@ RssFeed.publish('jobs', function(query) {
     self.addItem({
       title: self.cdata(job.title),
       description: self.cdata(job.htmlDescription),
-      link: Meteor.absoluteUrl(job.path()),
-      guid: Meteor.absoluteUrl(job.path()),
+      link: 'http://jobs.supernet.org/'+job.path(),
+      guid: 'http://jobs.supernet.org/'+job.path(),
       pubDate: job.createdAt
     });
   });
@@ -64,7 +64,7 @@ var profileRss = function(query) {
 
   self.setValue('title', self.cdata('We Work SuperNET - Recent Profiles'));
   self.setValue('description', self.cdata('This is a feed of recent profiles listed on We Work SuperNET.'));
-  self.setValue('link', Meteor.absoluteUrl());
+  self.setValue('link', 'http://jobs.supernet.org');
   self.setValue('lastBuildDate', lastBuildDate);
   self.setValue('pubDate', pubDate);
   self.setValue('ttl', 1);
@@ -79,8 +79,8 @@ var profileRss = function(query) {
     self.addItem({
       title: self.cdata(profile.title),
       description: self.cdata(profile.htmlDescription),
-      link: Meteor.absoluteUrl(profile.path()),
-      guid: Meteor.absoluteUrl(profile.path()),
+      link: 'http://jobs.supernet.org/'+profile.path(),
+      guid: 'http://jobs.supernet.org/'+profile.path(),
       pubDate: profile.createdAt
     });
   });
